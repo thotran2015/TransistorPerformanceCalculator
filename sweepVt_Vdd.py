@@ -14,7 +14,7 @@ def frange(start, stop, step):
     while i < stop:
         yield i
         i += step
-print("---Sweeping Vdd and Vt---")
+print("---Sweeping Vdd and Vt for CNT mosfet---")
 cnts = []
 EDP = {}
 for vdd in frange (0.3,1.0,0.1):
@@ -22,7 +22,7 @@ for vdd in frange (0.3,1.0,0.1):
         cnts.append(CNTTransistor(vt, vdd))
 for cnt in cnts:
     EDP[calc_EDP(cnt, copper_wire, gatesNum)] = (cnt.Vt, cnt.Vdd)
-print("best EDP, vt, vdd: ", min(EDP), EDP[min(EDP)])
+print("best EDP, vt, vdd: ", min(EDP), "n^2Js,", EDP[min(EDP)][0], "V,", EDP[min(EDP)][1], "V")
 
 Vt, Vdd = EDP[min(EDP)]
 cnt_mosfet = CNTTransistor(Vt,Vdd)
