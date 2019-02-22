@@ -41,7 +41,7 @@ class GrapheneWire:
     copper = CopperWire()
     Rw_copper = copper.Rw
     Cw_copper = copper.Cw
-    Rw = 100*Rw_copper #ohms
+    Rw = Rw_copper/100 #ohms
     Cw = 0.5*Cw_copper # fF
 
 class CNTTransistor:

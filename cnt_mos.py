@@ -18,8 +18,11 @@ E_lcnt = calc_wasteE_multigates_multicycles(cnt_mosfet, copper_wire, gatesNum, a
 E_dcnt = calc_dymE_multigates_multicycles(cnt_mosfet, copper_wire, gatesNum, app_cycles) * 10**-15 #J
 ###cnt: total energy app consumed 
 E_tcnt = E_lcnt + E_dcnt
+###copper: EDP
+EDP_tcnt = calc_EDP(cnt_mosfet, copper_wire, gatesNum)
 print("Clock period (CNT transistor):", Tclk_cnt, "ns")
 print("Clock freq (CNT transistor):", Fclk_cnt, "gigaHz")
 print("Leaked energy (CNT transistor):", E_lcnt,"J")
 print("Dynamic energy (CNT transistor):", E_dcnt, "J")
 print("Energy consumed by app (CNT transistor):", E_tcnt, "J")
+print("EDP (CNT transistor):", EDP_tcnt, "J")

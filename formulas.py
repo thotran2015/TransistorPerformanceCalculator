@@ -11,7 +11,7 @@ def calc_tclock(transistor, wire):
     Cw = wire.Cw
     Rw = wire.Rw
     Ron = Vdd/Ion  #ohms
-    return LD*0.5*math.log2(2)*(Ron*(Cout+Cw+FO*Cin) + Rw*(0.5*Cw+FO*Cin)) #fs
+    return (LD*0.5*math.log(2))*(Ron*(Cout+Cw+FO*Cin) + Rw*(0.5*Cw+FO*Cin)) #fs
 
 #leak energy
 def calc_wasteE_per_gate_cycle(transistor, tclock):

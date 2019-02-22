@@ -16,11 +16,15 @@ Fclk_graphene = 1/Tclk_graphene
 E_lgrap = calc_wasteE_multigates_multicycles(si_mosfet,graphene_wire, gatesNum, app_cycles) * 10**-9 #J
 ###graphene: dynamic energy
 E_dgrap = calc_dymE_multigates_multicycles(si_mosfet, graphene_wire, gatesNum, app_cycles) * 10**-15 #J
-###copper: total energy app consumed 
+###graphene: total energy app consumed 
 E_tgrap = E_lgrap + E_dgrap
+###graphene: EDP
+EDP_grap = calc_EDP(si_mosfet, graphene_wire, gatesNum)
 print("Clock period (graphene):", Tclk_graphene, "ns")
 print("Clock freq (graphene):", Fclk_graphene, "gigaHz")
 print("Leaked energy (graphene):", E_lgrap, "J")
 print("Dynamic energy (graphene):", E_dgrap, "J")
 print("Energy consumed by app (graphene):", E_tgrap, "J")
+print("EDP (graphene):", EDP_grap, "J")
+
 
