@@ -39,5 +39,5 @@ def calc_dymE_multigates_multicycles(transistor, wire, gatesNum, cycles):
 #calc EDP
 def calc_EDP(transistor, wire, gatesNum):
     Tclk = calc_tclock(transistor, wire)
-    E_per_cycle = (calc_wasteE_per_gate_cycle(transistor, Tclk) + calc_dymE_per_gate_cycle(transistor, wire))*gatesNum*Tclk
+    E_per_cycle = (calc_wasteE_per_gate_cycle(transistor, Tclk) + calc_dymE_per_gate_cycle(transistor, wire))*gatesNum*Tclk #nJ*ns
     return E_per_cycle
