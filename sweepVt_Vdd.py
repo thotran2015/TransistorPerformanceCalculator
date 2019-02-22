@@ -22,7 +22,7 @@ for vdd in frange (0.3,1.0,0.1):
         cnts.append(CNTTransistor(vt, vdd))
 for cnt in cnts:
     EDP[calc_EDP(cnt, copper_wire, gatesNum)] = (cnt.Vt, cnt.Vdd)
-print("best vt, vdd: ", min(EDP), EDP[min(EDP)])
+print("best EDP, vt, vdd: ", min(EDP), EDP[min(EDP)])
 
 Vt, Vdd = EDP[min(EDP)]
 cnt_mosfet = CNTTransistor(Vt,Vdd)

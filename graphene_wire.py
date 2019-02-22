@@ -25,6 +25,6 @@ print("Clock freq (graphene):", Fclk_graphene, "gigaHz")
 print("Leaked energy (graphene):", E_lgrap, "J")
 print("Dynamic energy (graphene):", E_dgrap, "J")
 print("Energy consumed by app (graphene):", E_tgrap, "J")
-print("EDP (graphene):", EDP_grap, "J")
+print("EDP (graphene):", EDP_grap, "n^2Js")
 
 
